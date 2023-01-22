@@ -1,16 +1,17 @@
 export default function Page() {
   return (
-    <>
+    <div className="h-screen flex flex-col bg-gray-800 text-white">
     <Header />
     <Main />
     <Footer />
-    </>
+    </div>
   );
 }
 
 function Header() {
   return (
-    <header>
+    <header className="flex-none bg-slate-700 border-b-2 border-slate-800">
+      header
       <nav>
         <ul>
           <li></li>
@@ -21,18 +22,18 @@ function Header() {
 }
 function Main() {
   return (
-    <main>
+    <main className="grow">
       <Home />
       <Skills />
       <Projects />
-      <About />
+      <Contact />
     </main>
   );
 }
 function Footer() {
   return (
-    <footer>
-
+    <footer className="flex-none">
+      Footer
     </footer>
   );
 }
@@ -46,16 +47,28 @@ function Home() {
 }
 function Skills() {
   return (
-    <section></section>
+    <section>
+      <H2>Skills</H2>
+    </section>
   );
 }
 function Projects() {
   return (
-    <section></section>
+    <section>
+      <h1>Projects</h1>
+    </section>
   );
 }
-function About() {
+function Contact() {
   return (
-    <section></section> 
+    <section>
+      <H2>Contact</H2>
+    </section> 
+  );
+}
+
+function H2(props) {
+  return (
+    <h2 className="text-4xl text-center">{props.children}</h2>
   );
 }
